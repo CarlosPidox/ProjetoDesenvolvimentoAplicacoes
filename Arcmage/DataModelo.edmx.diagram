@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="87ac235529c7456d86dc9b590f369ea9" Name="Diagram1" ZoomLevel="55" >
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Arbitro" Width="1.5" PointX="8.5" PointY="7.75" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Utilizador" Width="1.5" PointX="11" PointY="7.75" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Administrador" Width="1.5" PointX="13.125" PointY="7.75" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Torneio" Width="1.5" PointX="15.75" PointY="9.25" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Jogo" Width="1.5" PointX="8.5" PointY="9.75" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Deck" Width="1.5" PointX="10.625" PointY="9.875" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Carta" Width="1.5" PointX="12.875" PointY="9.25" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.TorneioEquipa" Width="1.5" PointX="15" PointY="11.5" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.TorneioNormal" Width="1.5" PointX="16.875" PointY="11.5" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.JogoEquipa" Width="1.5" PointX="10.125" PointY="12.75" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.JogoNormal" Width="1.5" PointX="8" PointY="14.25" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Equipa" Width="1.5" PointX="12.375" PointY="12.5" />
+        <EntityTypeShape EntityType="Data_x0020_Modelo.Jogador" Width="1.5" PointX="17.125" PointY="13.25" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.TorneioEquipa" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.TorneioNormal" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.JogoNormal" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.JogoEquipa" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.Arbitro" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.Administrador" />
+        <AssociationConnector Association="Data_x0020_Modelo.ArbitroJogo" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.Arbitro1" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.TorneioNormal1" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.TorneioEquipa1" />
+        <InheritanceConnector EntityType="Data_x0020_Modelo.Administrador1" />
+        <AssociationConnector Association="Data_x0020_Modelo.DeckJogo" />
+        <AssociationConnector Association="Data_x0020_Modelo.DeckJogo1" />
+        <AssociationConnector Association="Data_x0020_Modelo.DeckCarta" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoEquipaEquipa" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoEquipaEquipa1" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalJogador" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalJogador1" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalTorneioNormal" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoEquipaTorneioEquipa" />
+        <AssociationConnector Association="Data_x0020_Modelo.EquipaTorneioEquipa" />
+        <AssociationConnector Association="Data_x0020_Modelo.TorneioNormalJogador" />
+        <AssociationConnector Association="Data_x0020_Modelo.EquipaJogador" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

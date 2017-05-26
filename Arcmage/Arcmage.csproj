@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EAE96D4-6208-425B-9946-9AE97BEC00B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Arcmage</RootNamespace>
+    <AssemblyName>Arcmage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formularios\Torneios\AdicionarTorneioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneios\AdicionarTorneioForm.Designer.cs">
+      <DependentUpon>AdicionarTorneioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneios\EditarTorneioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneios\EditarTorneioForm.Designer.cs">
+      <DependentUpon>EditarTorneioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Equipas\AdicionarEquipaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Equipas\AdicionarEquipaForm.Designer.cs">
+      <DependentUpon>AdicionarEquipaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Equipas\EditarEquipaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Equipas\EditarEquipaForm.Designer.cs">
+      <DependentUpon>EditarEquipaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Baralhos\AdicionarBaralhoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Baralhos\AdicionarBaralhoForm.Designer.cs">
+      <DependentUpon>AdicionarBaralhoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Baralhos\EditarBaralhoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Baralhos\EditarBaralhoForm.Designer.cs">
+      <DependentUpon>EditarBaralhoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartas\AdicionarCartaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartas\AdicionarCartaForm.Designer.cs">
+      <DependentUpon>AdicionarCartaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Arbitro.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="arcmageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>arcmageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Carta.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Modelo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data Modelo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data Modelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Deck.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartas\EditarCartaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartas\EditarCartaForm.Designer.cs">
+      <DependentUpon>EditarCartaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipa.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Baralhos\GestaoBaralhosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Baralhos\GestaoBaralhosForm.Designer.cs">
+      <DependentUpon>GestaoBaralhosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartas\GestaoCartasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartas\GestaoCartasForm.Designer.cs">
+      <DependentUpon>GestaoCartasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Jogadores\AdicionarJogadorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Jogadores\AdicionarJogadorForm.Designer.cs">
+      <DependentUpon>AdicionarJogadorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Jogadores\EditarJogadorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Jogadores\EditarJogadorForm.Designer.cs">
+      <DependentUpon>EditarJogadorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Jogadores\GestaoJogadoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Jogadores\GestaoJogadoresForm.Designer.cs">
+      <DependentUpon>GestaoJogadoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Utilizadores\AdicionarUtilizadorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Utilizadores\AdicionarUtilizadorForm.Designer.cs">
+      <DependentUpon>AdicionarUtilizadorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Utilizadores\EditarUtilizadorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Utilizadores\EditarUtilizadorForm.Designer.cs">
+      <DependentUpon>EditarUtilizadorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Utilizadores\GestaoUtilizadoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Utilizadores\GestaoUtilizadoresForm.Designer.cs">
+      <DependentUpon>GestaoUtilizadoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Equipas\GestaoEquipasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Equipas\GestaoEquipasForm.Designer.cs">
+      <DependentUpon>GestaoEquipasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Torneios\GestaoTorneiosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Torneios\GestaoTorneiosForm.Designer.cs">
+      <DependentUpon>GestaoTorneiosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jogador.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Jogo.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JogoEquipa.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JogoNormal.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartialClasses\Carta.cs" />
+    <Compile Include="Formularios\PrincipalAdministradorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PrincipalAdministradorForm.Designer.cs">
+      <DependentUpon>PrincipalAdministradorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalArbitroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalArbitroForm.Designer.cs">
+      <DependentUpon>PrincipalArbitroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Torneio.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneioEquipa.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TorneioNormal.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilizador.cs">
+      <DependentUpon>Data Modelo.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios\Torneios\AdicionarTorneioForm.resx">
+      <DependentUpon>AdicionarTorneioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneios\EditarTorneioForm.resx">
+      <DependentUpon>EditarTorneioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Equipas\AdicionarEquipaForm.resx">
+      <DependentUpon>AdicionarEquipaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Equipas\EditarEquipaForm.resx">
+      <DependentUpon>EditarEquipaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Baralhos\AdicionarBaralhoForm.resx">
+      <DependentUpon>AdicionarBaralhoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Baralhos\EditarBaralhoForm.resx">
+      <DependentUpon>EditarBaralhoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartas\AdicionarCartaForm.resx">
+      <DependentUpon>AdicionarCartaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartas\EditarCartaForm.resx">
+      <DependentUpon>EditarCartaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Baralhos\GestaoBaralhosForm.resx">
+      <DependentUpon>GestaoBaralhosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartas\GestaoCartasForm.resx">
+      <DependentUpon>GestaoCartasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Jogadores\AdicionarJogadorForm.resx">
+      <DependentUpon>AdicionarJogadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Jogadores\EditarJogadorForm.resx">
+      <DependentUpon>EditarJogadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Jogadores\GestaoJogadoresForm.resx">
+      <DependentUpon>GestaoJogadoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PrincipalAdministradorForm.resx">
+      <DependentUpon>PrincipalAdministradorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Utilizadores\AdicionarUtilizadorForm.resx">
+      <DependentUpon>AdicionarUtilizadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Utilizadores\EditarUtilizadorForm.resx">
+      <DependentUpon>EditarUtilizadorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Utilizadores\GestaoUtilizadoresForm.resx">
+      <DependentUpon>GestaoUtilizadoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Equipas\GestaoEquipasForm.resx">
+      <DependentUpon>GestaoEquipasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Torneios\GestaoTorneiosForm.resx">
+      <DependentUpon>GestaoTorneiosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="DataModelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="arcmageDataSet.xsc">
+      <DependentUpon>arcmageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="arcmageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>arcmageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="arcmageDataSet.xss">
+      <DependentUpon>arcmageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataModelo.edmx.diagram">
+      <DependentUpon>DataModelo.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data Modelo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Data Modelo.Context.cs</LastGenOutput>
+      <DependentUpon>DataModelo.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data Modelo.edmx.sql" />
+    <Content Include="Data Modelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Data Modelo.cs</LastGenOutput>
+      <DependentUpon>DataModelo.edmx</DependentUpon>
+    </Content>
+    <Content Include="Imagens\AddAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
