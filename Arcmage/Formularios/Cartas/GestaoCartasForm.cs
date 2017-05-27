@@ -12,15 +12,13 @@ namespace Arcmage
 {
     public partial class GestaoCartasForm : Form
     {
-
-        private List<Carta> listaCartas;
+        
         private DataModeloContainer container;
 
         public GestaoCartasForm()
         {
             InitializeComponent();
             container = new DataModeloContainer();
-            listaCartas = new List<Carta>();
             RefreshListaCartas();
         }
 
@@ -41,7 +39,6 @@ namespace Arcmage
         public void RefreshListaCartas()
         {
             listbox_cartas.Items.Clear();
-
             listbox_cartas.Items.AddRange(container.CartaSet.ToArray());
         }
 

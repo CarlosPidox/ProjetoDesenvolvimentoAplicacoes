@@ -30,8 +30,8 @@
         {
             this.listbox_cartas = new System.Windows.Forms.ListBox();
             this.listbox_baralho = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_adicionarCarta = new System.Windows.Forms.Button();
+            this.button_eliminarCarta = new System.Windows.Forms.Button();
             this.label_numCartas = new System.Windows.Forms.Label();
             this.label_nomeBaralho = new System.Windows.Forms.Label();
             this.textBox_nomeBaralho = new System.Windows.Forms.TextBox();
@@ -56,32 +56,34 @@
             this.listbox_baralho.TabIndex = 1;
             this.listbox_baralho.SelectedIndexChanged += new System.EventHandler(this.listBox_baralho_SelectedIndexChanged);
             // 
-            // button1
+            // button_adicionarCarta
             // 
-            this.button1.Location = new System.Drawing.Point(138, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_adicionarCarta.Location = new System.Drawing.Point(138, 94);
+            this.button_adicionarCarta.Name = "button_adicionarCarta";
+            this.button_adicionarCarta.Size = new System.Drawing.Size(75, 23);
+            this.button_adicionarCarta.TabIndex = 2;
+            this.button_adicionarCarta.Text = ">";
+            this.button_adicionarCarta.UseVisualStyleBackColor = true;
+            this.button_adicionarCarta.Click += new System.EventHandler(this.button_adicionarCarta_Click);
             // 
-            // button2
+            // button_eliminarCarta
             // 
-            this.button2.Location = new System.Drawing.Point(138, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_eliminarCarta.Location = new System.Drawing.Point(138, 133);
+            this.button_eliminarCarta.Name = "button_eliminarCarta";
+            this.button_eliminarCarta.Size = new System.Drawing.Size(75, 23);
+            this.button_eliminarCarta.TabIndex = 3;
+            this.button_eliminarCarta.Text = "<";
+            this.button_eliminarCarta.UseVisualStyleBackColor = true;
+            this.button_eliminarCarta.Click += new System.EventHandler(this.button_eliminarCarta_Click);
             // 
             // label_numCartas
             // 
             this.label_numCartas.AutoSize = true;
             this.label_numCartas.Location = new System.Drawing.Point(303, 233);
             this.label_numCartas.Name = "label_numCartas";
-            this.label_numCartas.Size = new System.Drawing.Size(36, 13);
+            this.label_numCartas.Size = new System.Drawing.Size(30, 13);
             this.label_numCartas.TabIndex = 4;
-            this.label_numCartas.Text = "45/45";
+            this.label_numCartas.Text = "0/45";
             // 
             // label_nomeBaralho
             // 
@@ -116,6 +118,7 @@
             this.button_adicionar.TabIndex = 8;
             this.button_adicionar.Text = "Adicionar";
             this.button_adicionar.UseVisualStyleBackColor = true;
+            this.button_adicionar.Click += new System.EventHandler(this.button_adicionar_Click);
             // 
             // AdicionarBaralhoForm
             // 
@@ -127,8 +130,8 @@
             this.Controls.Add(this.textBox_nomeBaralho);
             this.Controls.Add(this.label_nomeBaralho);
             this.Controls.Add(this.label_numCartas);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_eliminarCarta);
+            this.Controls.Add(this.button_adicionarCarta);
             this.Controls.Add(this.listbox_baralho);
             this.Controls.Add(this.listbox_cartas);
             this.Name = "AdicionarBaralhoForm";
@@ -142,8 +145,8 @@
 
         private System.Windows.Forms.ListBox listbox_cartas;
         private System.Windows.Forms.ListBox listbox_baralho;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_adicionarCarta;
+        private System.Windows.Forms.Button button_eliminarCarta;
         private System.Windows.Forms.Label label_numCartas;
         private System.Windows.Forms.Label label_nomeBaralho;
         private System.Windows.Forms.TextBox textBox_nomeBaralho;

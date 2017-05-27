@@ -59,7 +59,7 @@
             this.button_adicionarBaralho.TabIndex = 1;
             this.button_adicionarBaralho.Text = "Adicionar ";
             this.button_adicionarBaralho.UseVisualStyleBackColor = true;
-            this.button_adicionarBaralho.Click += new System.EventHandler(this.button_adicionarBaralho_Click);
+            this.button_adicionarBaralho.Click += new System.EventHandler(this.EventoAdicionarBaralho);
             // 
             // button1
             // 

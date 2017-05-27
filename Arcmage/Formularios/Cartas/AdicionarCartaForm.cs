@@ -17,12 +17,11 @@ namespace Arcmage
         public AdicionarCartaForm()
         {
             InitializeComponent();
-
         }
+
 
         private void label_tipo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBox_tipo.SelectedText);
         }
 
         private void button_adicionar_Click(object sender, EventArgs e)

@@ -16,5 +16,10 @@ namespace Arcmage
         {
             InitializeComponent();
         }
+
+        private void button_adicionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

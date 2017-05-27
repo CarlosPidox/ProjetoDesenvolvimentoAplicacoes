@@ -18,32 +18,60 @@ namespace Arcmage
         {
             InitializeComponent();
             container = new DataModeloContainer();
+
+            /*Administrador admin = new Administrador
+            {
+                Id = 3,
+                Username = "1",
+                Password = "1",
+                Email = "danielgod@hotmail.com"
+            };
+            container.UtilizadorSet.Add(admin);
+            container.SaveChanges();*/
         }
 
-
+        //Falta converter para sha512
         private void button_entrar_Click(object sender, EventArgs e)
         {
+            bool login = false;
 
-            PrincipalAdministradorForm form = new PrincipalAdministradorForm();
-            DialogResult resultado = form.ShowDialog();
-            /* foreach(Utilizador u in container.UtilizadorSet)
-             {
-                 if (textBox_utilizador.Text == u.Username)
-                 {
-                     if (textBox_password.Text == u.Password)
-                     {
-                         MessageBox.Show("Nice entrou");
-                     }
-                     else if (textBox_password.Text != u.Password)
-                     {
-                         MessageBox.Show("Password Errada");
-                     }
-                 }
-                 else
-                 {
-                     MessageBox.Show("Não existe um utilizador com esse nome");
-                 }
-             }*/
+            Arbitro[] ab = container.UtilizadorSet.OfType<Arbitro>().ToArray();
+            foreach (Arbitro a in ab)
+            {
+               if(a.Username == textBox_utilizador.Text)
+                {
+                    if(a.Password == textBox_password.Text)
+                    {
+                        login = true;
+                        GestaoCartasForm form = new GestaoCartasForm();
+                        form.ShowDialog();
+                    }
+                }
+            }
+
+            Administrador[] ad = container.UtilizadorSet.OfType<Administrador>().ToArray();
+            foreach (Administrador a in ad)
+            {
+                if (a.Username == textBox_utilizador.Text)
+                {
+                    if (a.Password == textBox_password.Text)
+                    {
+                        login = true;
+                        PrincipalAdministradorForm form = new PrincipalAdministradorForm();
+                        form.ShowDialog();
+                    }
+                }
+            }
+
+            if(!login)
+            {
+                MessageBox.Show("Dados de acesso inválidos, por favor tente novamente");
+            }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
