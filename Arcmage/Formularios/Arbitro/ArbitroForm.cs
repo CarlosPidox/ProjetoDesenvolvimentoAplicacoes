@@ -12,7 +12,7 @@ namespace Arcmage
 {
     public partial class ArbitroForm : Form
     {
-        public ArbitroFrom()
+        public ArbitroForm()
         {
             InitializeComponent();
         }
