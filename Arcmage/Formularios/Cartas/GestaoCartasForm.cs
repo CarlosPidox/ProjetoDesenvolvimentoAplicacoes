@@ -39,7 +39,7 @@ namespace Arcmage
         public void RefreshListaCartas()
         {
             listbox_cartas.Items.Clear();
-            listbox_cartas.Items.AddRange(container.JogadorSet.ToArray());
+            listbox_cartas.Items.AddRange(container.CartaSet.ToArray());
         }
 
         private Carta cartaQueryNome(string nomeCarta)
@@ -121,6 +121,11 @@ namespace Arcmage
         }
 
         private void GestaoCartasForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listbox_cartas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -71,6 +71,7 @@
             this.listbox_cartas.Name = "listbox_cartas";
             this.listbox_cartas.Size = new System.Drawing.Size(120, 225);
             this.listbox_cartas.TabIndex = 4;
+            this.listbox_cartas.SelectedIndexChanged += new System.EventHandler(this.listbox_cartas_SelectedIndexChanged);
             this.listbox_cartas.DoubleClick += new System.EventHandler(this.EventoEditarCarta);
             // 
             // GestaoCartasForm

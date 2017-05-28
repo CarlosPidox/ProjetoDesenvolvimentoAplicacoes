@@ -24,31 +24,50 @@ namespace Arcmage
 
         private void button_adicionarJogador_Click(object sender, EventArgs e)
         {
+                    /*label_nickname.ForeColor = Color.Black;
+            label_nome.ForeColor = Color.Black;
+            label_email.ForeColor = Color.Black;
+            label_idade.ForeColor = Color.Black;
+            bool erro = false;
+            if (textBox_nickname.TextLength == 0)
+            {
+                erro = true;
+                label_nickname.ForeColor = Color.Red;
+            }
+            if (textBox_nomeJogador.TextLength == 0)
+            {
+                erro = true;
+                label_nome.ForeColor = Color.Red;
+            }
+            string email = textBox_emailJogador.Text;
+            var teste = email.IndexOf("@");
+            if (email.Length == 0 && email.IndexOf("@") != 1)
+            {
+                erro = true;
+                label_email.ForeColor = Color.Red;
+            }
+            if (!erro)
+            {*/
             novoJogador = new Jogador
             {
                 Nickname = textBox_nickname.Text,
                 Idade = (int)numericUpDown_idade.Value,
                 Nome = textBox_nomeJogador.Text,
-                Email = textBox_emailJogador.Text
+                Email = textBox_emailJogador.Text,
+                Avatar = pictureBox_avatar.ImageLocation
             };
+            DialogResult = DialogResult.OK;
+            /*}*/
         }
 
         private void pictureBox_avatar_Click(object sender, EventArgs e)
         {
-            if (openImagemDialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Imagem JPG|*.jpg|Imagem PNG|*.png";
+            if (file.ShowDialog() == DialogResult.OK)
             {
-                if (openImagemDialog.FileName != "")
-                {
-                    // Saves the Image via a FileStream created by the OpenFile method.  
-                    System.IO.FileStream fs =
-                       (System.IO.FileStream)openImagemDialog.OpenFile();
-                    //fs.
-
-                    //fs.Close();
-                }
+                pictureBox_avatar.ImageLocation = file.FileName;
             }
-
-           // MessageBox.Show(textoMsgBox, tituloMsgBox, MessageBoxButtons.OK);
         }
 
         private void openImagemDialog_FileOk(object sender, CancelEventArgs e)

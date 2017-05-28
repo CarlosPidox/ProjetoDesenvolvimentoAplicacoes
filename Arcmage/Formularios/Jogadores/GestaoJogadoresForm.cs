@@ -19,12 +19,13 @@ namespace Arcmage
         {
             InitializeComponent();
             container = new DataModeloContainer();
+            RefreshListaJogadores();
         }
 
         public void RefreshListaJogadores()
         {
             listbox_jogadores.Items.Clear();
-            listbox_jogadores.Items.AddRange(container.CartaSet.ToArray());
+            listbox_jogadores.Items.AddRange(container.JogadorSet.ToArray());
         }
 
         private void EventoAdicionarJogador(object sender, EventArgs e)
@@ -34,8 +35,8 @@ namespace Arcmage
 
             if (resultado == DialogResult.OK)
             {
-                //if (form.novaCarta != null)
-                    //AdicionarJogador(form.novaCarta);
+                if (form.novoJogador != null)
+                    AdicionarJogador(form.novoJogador);
             }
         }
 
