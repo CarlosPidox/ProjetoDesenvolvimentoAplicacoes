@@ -144,6 +144,7 @@
             this.pictureBox_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_avatar.TabIndex = 25;
             this.pictureBox_avatar.TabStop = false;
+            this.pictureBox_avatar.Click += new System.EventHandler(this.pictureBox_avatar_Click);
             // 
             // EditarJogadorForm
             // 

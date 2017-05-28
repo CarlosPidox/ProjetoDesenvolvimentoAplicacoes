@@ -16,5 +16,10 @@ namespace Arcmage
         {
             InitializeComponent();
         }
+
+        private void pictureBox_avatar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

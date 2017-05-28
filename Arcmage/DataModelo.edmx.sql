@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/28/2017 09:42:46
--- Generated from EDMX file: C:\Users\2161728\Desktop\Projeto DA\Arcmage\Arcmage\Arcmage\Data Modelo.edmx
+-- Date Created: 05/28/2017 17:49:28
+-- Generated from EDMX file: C:\Users\Carlos-PC\Documents\GitHub\ProjetoDesenvolvimentoAplicacoes\Arcmage\DataModelo.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [arcmage];
+USE [ARCMAGE];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,131 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ArbitroJogo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet] DROP CONSTRAINT [FK_ArbitroJogo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DeckJogo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet] DROP CONSTRAINT [FK_DeckJogo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DeckJogo1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet] DROP CONSTRAINT [FK_DeckJogo1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DeckCarta_Deck]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DeckCarta] DROP CONSTRAINT [FK_DeckCarta_Deck];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DeckCarta_Carta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DeckCarta] DROP CONSTRAINT [FK_DeckCarta_Carta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoEquipaEquipa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoEquipa] DROP CONSTRAINT [FK_JogoEquipaEquipa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoEquipaEquipa1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoEquipa] DROP CONSTRAINT [FK_JogoEquipaEquipa1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoNormalTorneioNormal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoNormal] DROP CONSTRAINT [FK_JogoNormalTorneioNormal];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoEquipaTorneioEquipa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoEquipa] DROP CONSTRAINT [FK_JogoEquipaTorneioEquipa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EquipaTorneioEquipa_Equipa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EquipaTorneioEquipa] DROP CONSTRAINT [FK_EquipaTorneioEquipa_Equipa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EquipaTorneioEquipa_TorneioEquipa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EquipaTorneioEquipa] DROP CONSTRAINT [FK_EquipaTorneioEquipa_TorneioEquipa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TorneioNormalJogador_TorneioNormal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TorneioNormalJogador] DROP CONSTRAINT [FK_TorneioNormalJogador_TorneioNormal];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TorneioNormalJogador_Jogador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TorneioNormalJogador] DROP CONSTRAINT [FK_TorneioNormalJogador_Jogador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EquipaJogador_Equipa]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EquipaJogador] DROP CONSTRAINT [FK_EquipaJogador_Equipa];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EquipaJogador_Jogador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[EquipaJogador] DROP CONSTRAINT [FK_EquipaJogador_Jogador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoNormalJogador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoNormal] DROP CONSTRAINT [FK_JogoNormalJogador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoNormalJogador1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoNormal] DROP CONSTRAINT [FK_JogoNormalJogador1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Arbitro_inherits_Utilizador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Arbitro] DROP CONSTRAINT [FK_Arbitro_inherits_Utilizador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoEquipa_inherits_Jogo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoEquipa] DROP CONSTRAINT [FK_JogoEquipa_inherits_Jogo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_JogoNormal_inherits_Jogo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JogoSet_JogoNormal] DROP CONSTRAINT [FK_JogoNormal_inherits_Jogo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TorneioNormal_inherits_Torneio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TorneioSet_TorneioNormal] DROP CONSTRAINT [FK_TorneioNormal_inherits_Torneio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TorneioEquipa_inherits_Torneio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TorneioSet_TorneioEquipa] DROP CONSTRAINT [FK_TorneioEquipa_inherits_Torneio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Administrador_inherits_Utilizador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UtilizadorSet_Administrador] DROP CONSTRAINT [FK_Administrador_inherits_Utilizador];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[UtilizadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[TorneioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TorneioSet];
+GO
+IF OBJECT_ID(N'[dbo].[JogoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JogoSet];
+GO
+IF OBJECT_ID(N'[dbo].[DeckSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DeckSet];
+GO
+IF OBJECT_ID(N'[dbo].[CartaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CartaSet];
+GO
+IF OBJECT_ID(N'[dbo].[EquipaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EquipaSet];
+GO
+IF OBJECT_ID(N'[dbo].[JogadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JogadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[UtilizadorSet_Arbitro]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet_Arbitro];
+GO
+IF OBJECT_ID(N'[dbo].[JogoSet_JogoEquipa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JogoSet_JogoEquipa];
+GO
+IF OBJECT_ID(N'[dbo].[JogoSet_JogoNormal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JogoSet_JogoNormal];
+GO
+IF OBJECT_ID(N'[dbo].[TorneioSet_TorneioNormal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TorneioSet_TorneioNormal];
+GO
+IF OBJECT_ID(N'[dbo].[TorneioSet_TorneioEquipa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TorneioSet_TorneioEquipa];
+GO
+IF OBJECT_ID(N'[dbo].[UtilizadorSet_Administrador]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UtilizadorSet_Administrador];
+GO
+IF OBJECT_ID(N'[dbo].[DeckCarta]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DeckCarta];
+GO
+IF OBJECT_ID(N'[dbo].[EquipaTorneioEquipa]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EquipaTorneioEquipa];
+GO
+IF OBJECT_ID(N'[dbo].[TorneioNormalJogador]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TorneioNormalJogador];
+GO
+IF OBJECT_ID(N'[dbo].[EquipaJogador]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[EquipaJogador];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -79,7 +199,9 @@ GO
 
 -- Creating table 'EquipaSet'
 CREATE TABLE [dbo].[EquipaSet] (
-    [Id] int IDENTITY(1,1) NOT NULL
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Nome] nvarchar(max)  NOT NULL,
+    [Avatar] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -90,9 +212,7 @@ CREATE TABLE [dbo].[JogadorSet] (
     [Email] nvarchar(max)  NOT NULL,
     [Nickname] nvarchar(max)  NOT NULL,
     [Idade] int  NOT NULL,
-    [Avatar] nvarchar(max)  NOT NULL,
-    [JogoNormal1_Id] int  NOT NULL,
-    [JogoNormal2_Id] int  NOT NULL
+    [Avatar] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -116,7 +236,9 @@ GO
 -- Creating table 'JogoSet_JogoNormal'
 CREATE TABLE [dbo].[JogoSet_JogoNormal] (
     [Id] int  NOT NULL,
-    [TorneioNormal_Id] int  NOT NULL
+    [TorneioNormal_Id] int  NOT NULL,
+    [Jogador1_Id] int  NOT NULL,
+    [Jogador2_Id] int  NOT NULL
 );
 GO
 
@@ -376,36 +498,6 @@ ON [dbo].[JogoSet_JogoEquipa]
     ([Equipa2_Id]);
 GO
 
--- Creating foreign key on [JogoNormal1_Id] in table 'JogadorSet'
-ALTER TABLE [dbo].[JogadorSet]
-ADD CONSTRAINT [FK_JogoNormalJogador]
-    FOREIGN KEY ([JogoNormal1_Id])
-    REFERENCES [dbo].[JogoSet_JogoNormal]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_JogoNormalJogador'
-CREATE INDEX [IX_FK_JogoNormalJogador]
-ON [dbo].[JogadorSet]
-    ([JogoNormal1_Id]);
-GO
-
--- Creating foreign key on [JogoNormal2_Id] in table 'JogadorSet'
-ALTER TABLE [dbo].[JogadorSet]
-ADD CONSTRAINT [FK_JogoNormalJogador1]
-    FOREIGN KEY ([JogoNormal2_Id])
-    REFERENCES [dbo].[JogoSet_JogoNormal]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_JogoNormalJogador1'
-CREATE INDEX [IX_FK_JogoNormalJogador1]
-ON [dbo].[JogadorSet]
-    ([JogoNormal2_Id]);
-GO
-
 -- Creating foreign key on [TorneioNormal_Id] in table 'JogoSet_JogoNormal'
 ALTER TABLE [dbo].[JogoSet_JogoNormal]
 ADD CONSTRAINT [FK_JogoNormalTorneioNormal]
@@ -506,6 +598,36 @@ GO
 CREATE INDEX [IX_FK_EquipaJogador_Jogador]
 ON [dbo].[EquipaJogador]
     ([Jogador_Id]);
+GO
+
+-- Creating foreign key on [Jogador1_Id] in table 'JogoSet_JogoNormal'
+ALTER TABLE [dbo].[JogoSet_JogoNormal]
+ADD CONSTRAINT [FK_JogoNormalJogador]
+    FOREIGN KEY ([Jogador1_Id])
+    REFERENCES [dbo].[JogadorSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_JogoNormalJogador'
+CREATE INDEX [IX_FK_JogoNormalJogador]
+ON [dbo].[JogoSet_JogoNormal]
+    ([Jogador1_Id]);
+GO
+
+-- Creating foreign key on [Jogador2_Id] in table 'JogoSet_JogoNormal'
+ALTER TABLE [dbo].[JogoSet_JogoNormal]
+ADD CONSTRAINT [FK_JogoNormalJogador1]
+    FOREIGN KEY ([Jogador2_Id])
+    REFERENCES [dbo].[JogadorSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_JogoNormalJogador1'
+CREATE INDEX [IX_FK_JogoNormalJogador1]
+ON [dbo].[JogoSet_JogoNormal]
+    ([Jogador2_Id]);
 GO
 
 -- Creating foreign key on [Id] in table 'UtilizadorSet_Arbitro'

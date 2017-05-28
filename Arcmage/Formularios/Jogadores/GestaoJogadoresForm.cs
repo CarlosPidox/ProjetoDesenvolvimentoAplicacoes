@@ -34,8 +34,8 @@ namespace Arcmage
 
             if (resultado == DialogResult.OK)
             {
-                //if (form.novaCarta != null)
-                    //AdicionarJogador(form.novaCarta);
+                if (form.novoJogador != null)
+                    AdicionarJogador(form.novoJogador);
             }
         }
 

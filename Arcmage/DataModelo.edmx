@@ -51,14 +51,6 @@
       <End Role="JogoEquipa" EntitySet="JogoSet_JogoEquipa" />
       <End Role="Equipa" EntitySet="EquipaSet" />
     </AssociationSet>
-    <AssociationSet Name="JogoNormalJogador" Association="Data_x0020_Modelo.Store.JogoNormalJogador">
-      <End Role="JogoNormal" EntitySet="JogoSet_JogoNormal" />
-      <End Role="Jogador" EntitySet="JogadorSet" />
-    </AssociationSet>
-    <AssociationSet Name="JogoNormalJogador1" Association="Data_x0020_Modelo.Store.JogoNormalJogador1">
-      <End Role="JogoNormal" EntitySet="JogoSet_JogoNormal" />
-      <End Role="Jogador" EntitySet="JogadorSet" />
-    </AssociationSet>
     <AssociationSet Name="JogoNormalTorneioNormal" Association="Data_x0020_Modelo.Store.JogoNormalTorneioNormal">
       <End Role="JogoNormal" EntitySet="JogoSet_JogoNormal" />
       <End Role="TorneioNormal" EntitySet="TorneioSet_TorneioNormal" />
@@ -90,6 +82,14 @@
     <AssociationSet Name="FK_EquipaJogador_Jogador" Association="Data_x0020_Modelo.Store.FK_EquipaJogador_Jogador">
       <End Role="Jogador" EntitySet="JogadorSet" />
       <End Role="EquipaJogador" EntitySet="EquipaJogador" />
+    </AssociationSet>
+    <AssociationSet Name="JogoNormalJogador" Association="Data_x0020_Modelo.Store.JogoNormalJogador">
+      <End Role="JogoNormal" EntitySet="JogoSet_JogoNormal" />
+      <End Role="Jogador" EntitySet="JogadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="JogoNormalJogador1" Association="Data_x0020_Modelo.Store.JogoNormalJogador1">
+      <End Role="JogoNormal" EntitySet="JogoSet_JogoNormal" />
+      <End Role="Jogador" EntitySet="JogadorSet" />
     </AssociationSet>
     <AssociationSet Name="FK_Arbitro_inherits_Utilizador" Association="Data_x0020_Modelo.Store.FK_Arbitro_inherits_Utilizador">
       <End Role="Utilizador" EntitySet="UtilizadorSet" />
@@ -171,6 +171,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="JogadorSet">
     <Key>
@@ -182,8 +184,6 @@
     <Property Name="Nickname" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Idade" Type="int" Nullable="false" />
     <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="JogoNormal1_Id" Type="int" Nullable="false" />
-    <Property Name="JogoNormal2_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="UtilizadorSet_Arbitro">
     <Key>
@@ -208,6 +208,8 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="TorneioNormal_Id" Type="int" Nullable="false" />
+    <Property Name="Jogador1_Id" Type="int" Nullable="false" />
+    <Property Name="Jogador2_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TorneioSet_TorneioNormal">
     <Key>
@@ -320,30 +322,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="JogoNormalJogador">
-    <End Role="JogoNormal" Type="Data_x0020_Modelo.Store.JogoSet_JogoNormal" Multiplicity="1" />
-    <End Role="Jogador" Type="Data_x0020_Modelo.Store.JogadorSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="JogoNormal">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Jogador">
-        <PropertyRef Name="JogoNormal1_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="JogoNormalJogador1">
-    <End Role="JogoNormal" Type="Data_x0020_Modelo.Store.JogoSet_JogoNormal" Multiplicity="1" />
-    <End Role="Jogador" Type="Data_x0020_Modelo.Store.JogadorSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="JogoNormal">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Jogador">
-        <PropertyRef Name="JogoNormal2_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="JogoNormalTorneioNormal">
     <End Role="JogoNormal" Type="Data_x0020_Modelo.Store.JogoSet_JogoNormal" Multiplicity="*" />
     <End Role="TorneioNormal" Type="Data_x0020_Modelo.Store.TorneioSet_TorneioNormal" Multiplicity="1" />
@@ -365,6 +343,30 @@
       </Principal>
       <Dependent Role="JogoEquipa">
         <PropertyRef Name="TorneioEquipa_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JogoNormalJogador">
+    <End Role="JogoNormal" Type="Data_x0020_Modelo.Store.JogoSet_JogoNormal" Multiplicity="*" />
+    <End Role="Jogador" Type="Data_x0020_Modelo.Store.JogadorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Jogador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JogoNormal">
+        <PropertyRef Name="Jogador1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JogoNormalJogador1">
+    <End Role="JogoNormal" Type="Data_x0020_Modelo.Store.JogoSet_JogoNormal" Multiplicity="*" />
+    <End Role="Jogador" Type="Data_x0020_Modelo.Store.JogadorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Jogador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="JogoNormal">
+        <PropertyRef Name="Jogador2_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -584,14 +586,6 @@
             <End Role="JogoEquipa" EntitySet="JogoSet" />
             <End Role="Equipa" EntitySet="EquipaSet" />
           </AssociationSet>
-          <AssociationSet Name="JogoNormalJogador" Association="Data_x0020_Modelo.JogoNormalJogador">
-            <End Role="JogoNormal" EntitySet="JogoSet" />
-            <End Role="Jogador" EntitySet="JogadorSet" />
-          </AssociationSet>
-          <AssociationSet Name="JogoNormalJogador1" Association="Data_x0020_Modelo.JogoNormalJogador1">
-            <End Role="JogoNormal" EntitySet="JogoSet" />
-            <End Role="Jogador" EntitySet="JogadorSet" />
-          </AssociationSet>
           <AssociationSet Name="JogoNormalTorneioNormal" Association="Data_x0020_Modelo.JogoNormalTorneioNormal">
             <End Role="JogoNormal" EntitySet="JogoSet" />
             <End Role="TorneioNormal" EntitySet="TorneioSet" />
@@ -610,6 +604,14 @@
           </AssociationSet>
           <AssociationSet Name="EquipaJogador" Association="Data_x0020_Modelo.EquipaJogador">
             <End Role="Equipa" EntitySet="EquipaSet" />
+            <End Role="Jogador" EntitySet="JogadorSet" />
+          </AssociationSet>
+          <AssociationSet Name="JogoNormalJogador" Association="Data_x0020_Modelo.JogoNormalJogador">
+            <End Role="JogoNormal" EntitySet="JogoSet" />
+            <End Role="Jogador" EntitySet="JogadorSet" />
+          </AssociationSet>
+          <AssociationSet Name="JogoNormalJogador1" Association="Data_x0020_Modelo.JogoNormalJogador1">
+            <End Role="JogoNormal" EntitySet="JogoSet" />
             <End Role="Jogador" EntitySet="JogadorSet" />
           </AssociationSet>
         </EntityContainer>
@@ -689,9 +691,9 @@
           <NavigationProperty Name="TorneioEquipa" Relationship="Data_x0020_Modelo.JogoEquipaTorneioEquipa" FromRole="JogoEquipa" ToRole="TorneioEquipa" />
         </EntityType>
         <EntityType Name="JogoNormal" BaseType="Data_x0020_Modelo.Jogo">
+          <NavigationProperty Name="TorneioNormal" Relationship="Data_x0020_Modelo.JogoNormalTorneioNormal" FromRole="JogoNormal" ToRole="TorneioNormal" />
           <NavigationProperty Name="Jogador1" Relationship="Data_x0020_Modelo.JogoNormalJogador" FromRole="JogoNormal" ToRole="Jogador" />
           <NavigationProperty Name="Jogador2" Relationship="Data_x0020_Modelo.JogoNormalJogador1" FromRole="JogoNormal" ToRole="Jogador" />
-          <NavigationProperty Name="TorneioNormal" Relationship="Data_x0020_Modelo.JogoNormalTorneioNormal" FromRole="JogoNormal" ToRole="TorneioNormal" />
         </EntityType>
         <EntityType Name="Equipa">
           <Key>
@@ -702,6 +704,8 @@
           <NavigationProperty Name="JogoEquipa2" Relationship="Data_x0020_Modelo.JogoEquipaEquipa1" FromRole="Equipa" ToRole="JogoEquipa" />
           <NavigationProperty Name="TorneioEquipa" Relationship="Data_x0020_Modelo.EquipaTorneioEquipa" FromRole="Equipa" ToRole="TorneioEquipa" />
           <NavigationProperty Name="Jogador" Relationship="Data_x0020_Modelo.EquipaJogador" FromRole="Equipa" ToRole="Jogador" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Avatar" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Jogador">
           <Key>
@@ -713,10 +717,10 @@
           <Property Name="Nickname" Type="String" Nullable="false" />
           <Property Name="Idade" Type="Int32" Nullable="false" />
           <Property Name="Avatar" Type="String" Nullable="false" />
-          <NavigationProperty Name="JogoNormal1" Relationship="Data_x0020_Modelo.JogoNormalJogador" FromRole="Jogador" ToRole="JogoNormal" />
-          <NavigationProperty Name="JogoNormal2" Relationship="Data_x0020_Modelo.JogoNormalJogador1" FromRole="Jogador" ToRole="JogoNormal" />
           <NavigationProperty Name="TorneioNormal" Relationship="Data_x0020_Modelo.TorneioNormalJogador" FromRole="Jogador" ToRole="TorneioNormal" />
           <NavigationProperty Name="Equipa" Relationship="Data_x0020_Modelo.EquipaJogador" FromRole="Jogador" ToRole="Equipa" />
+          <NavigationProperty Name="JogoNormal1" Relationship="Data_x0020_Modelo.JogoNormalJogador" FromRole="Jogador" ToRole="JogoNormal" />
+          <NavigationProperty Name="JogoNormal2" Relationship="Data_x0020_Modelo.JogoNormalJogador1" FromRole="Jogador" ToRole="JogoNormal" />
         </EntityType>
         <Association Name="ArbitroJogo">
           <End Type="Data_x0020_Modelo.Arbitro" Role="Arbitro" Multiplicity="1" />
@@ -742,14 +746,6 @@
           <End Type="Data_x0020_Modelo.JogoEquipa" Role="JogoEquipa" Multiplicity="*" />
           <End Type="Data_x0020_Modelo.Equipa" Role="Equipa" Multiplicity="1" />
         </Association>
-        <Association Name="JogoNormalJogador">
-          <End Type="Data_x0020_Modelo.JogoNormal" Role="JogoNormal" Multiplicity="1" />
-          <End Type="Data_x0020_Modelo.Jogador" Role="Jogador" Multiplicity="*" />
-        </Association>
-        <Association Name="JogoNormalJogador1">
-          <End Type="Data_x0020_Modelo.JogoNormal" Role="JogoNormal" Multiplicity="1" />
-          <End Type="Data_x0020_Modelo.Jogador" Role="Jogador" Multiplicity="*" />
-        </Association>
         <Association Name="JogoNormalTorneioNormal">
           <End Type="Data_x0020_Modelo.JogoNormal" Role="JogoNormal" Multiplicity="*" />
           <End Type="Data_x0020_Modelo.TorneioNormal" Role="TorneioNormal" Multiplicity="1" />
@@ -769,6 +765,14 @@
         <Association Name="EquipaJogador">
           <End Type="Data_x0020_Modelo.Equipa" Role="Equipa" Multiplicity="*" />
           <End Type="Data_x0020_Modelo.Jogador" Role="Jogador" Multiplicity="*" />
+        </Association>
+        <Association Name="JogoNormalJogador">
+          <End Type="Data_x0020_Modelo.JogoNormal" Role="JogoNormal" Multiplicity="*" />
+          <End Type="Data_x0020_Modelo.Jogador" Role="Jogador" Multiplicity="1" />
+        </Association>
+        <Association Name="JogoNormalJogador1">
+          <End Type="Data_x0020_Modelo.JogoNormal" Role="JogoNormal" Multiplicity="*" />
+          <End Type="Data_x0020_Modelo.Jogador" Role="Jogador" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -865,6 +869,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(Data_x0020_Modelo.Equipa)">
         <MappingFragment StoreEntitySet="EquipaSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -928,22 +934,6 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="JogoNormalJogador" TypeName="Data_x0020_Modelo.JogoNormalJogador" StoreEntitySet="JogadorSet">
-      <EndProperty Name="JogoNormal">
-        <ScalarProperty Name="Id" ColumnName="JogoNormal1_Id" />
-      </EndProperty>
-      <EndProperty Name="Jogador">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="JogoNormalJogador1" TypeName="Data_x0020_Modelo.JogoNormalJogador1" StoreEntitySet="JogadorSet">
-      <EndProperty Name="JogoNormal">
-        <ScalarProperty Name="Id" ColumnName="JogoNormal2_Id" />
-      </EndProperty>
-      <EndProperty Name="Jogador">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="JogoNormalTorneioNormal" TypeName="Data_x0020_Modelo.JogoNormalTorneioNormal" StoreEntitySet="JogoSet_JogoNormal">
       <EndProperty Name="TorneioNormal">
         <ScalarProperty Name="Id" ColumnName="TorneioNormal_Id" />
@@ -982,6 +972,22 @@
       </EndProperty>
       <EndProperty Name="Jogador">
         <ScalarProperty Name="Id" ColumnName="Jogador_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JogoNormalJogador" TypeName="Data_x0020_Modelo.JogoNormalJogador" StoreEntitySet="JogoSet_JogoNormal">
+      <EndProperty Name="Jogador">
+        <ScalarProperty Name="Id" ColumnName="Jogador1_Id" />
+      </EndProperty>
+      <EndProperty Name="JogoNormal">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JogoNormalJogador1" TypeName="Data_x0020_Modelo.JogoNormalJogador1" StoreEntitySet="JogoSet_JogoNormal">
+      <EndProperty Name="Jogador">
+        <ScalarProperty Name="Id" ColumnName="Jogador2_Id" />
+      </EndProperty>
+      <EndProperty Name="JogoNormal">
+        <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

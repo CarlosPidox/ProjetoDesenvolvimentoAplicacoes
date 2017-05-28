@@ -21,7 +21,6 @@ namespace Arcmage
 
             /*Administrador admin = new Administrador
             {
-                Id = 3,
                 Username = "1",
                 Password = "1",
                 Email = "danielgod@hotmail.com"
