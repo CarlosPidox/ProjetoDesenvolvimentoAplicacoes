@@ -57,11 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Arbitro\ArbitroFrom.cs">
+    <Compile Include="Formularios\Arbitro\ArbitroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Arbitro\ArbitroFrom.Designer.cs">
-      <DependentUpon>ArbitroFrom.cs</DependentUpon>
+    <Compile Include="Formularios\Arbitro\ArbitroForm.Designer.cs">
+      <DependentUpon>ArbitroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Torneios\AdicionarTorneioForm.cs">
       <SubType>Form</SubType>
@@ -252,8 +252,8 @@
     <Compile Include="Utilizador.cs">
       <DependentUpon>Data Modelo.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formularios\Arbitro\ArbitroFrom.resx">
-      <DependentUpon>ArbitroFrom.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Arbitro\ArbitroForm.resx">
+      <DependentUpon>ArbitroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Torneios\AdicionarTorneioForm.resx">
       <DependentUpon>AdicionarTorneioForm.cs</DependentUpon>

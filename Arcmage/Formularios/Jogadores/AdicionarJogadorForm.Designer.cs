@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_nickname = new System.Windows.Forms.TextBox();
             this.numericUpDown_idade = new System.Windows.Forms.NumericUpDown();
+            this.openImagemDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_avatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_idade)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +123,7 @@
             this.pictureBox_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_avatar.TabIndex = 12;
             this.pictureBox_avatar.TabStop = false;
+            this.pictureBox_avatar.Click += new System.EventHandler(this.pictureBox_avatar_Click);
             // 
             // label3
             // 
@@ -145,6 +147,11 @@
             this.numericUpDown_idade.Name = "numericUpDown_idade";
             this.numericUpDown_idade.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_idade.TabIndex = 24;
+            // 
+            // openImagemDialog
+            // 
+            this.openImagemDialog.Filter = "Imagem JPG|*.jpg|Imagem PNG|*.png";
+            this.openImagemDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openImagemDialog_FileOk);
             // 
             // AdicionarJogadorForm
             // 
@@ -186,5 +193,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_nickname;
         private System.Windows.Forms.NumericUpDown numericUpDown_idade;
+        private System.Windows.Forms.OpenFileDialog openImagemDialog;
     }
 }

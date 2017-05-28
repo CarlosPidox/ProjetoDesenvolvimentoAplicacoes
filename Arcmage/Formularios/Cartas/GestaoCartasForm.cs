@@ -39,7 +39,7 @@ namespace Arcmage
         public void RefreshListaCartas()
         {
             listbox_cartas.Items.Clear();
-            listbox_cartas.Items.AddRange(container.CartaSet.ToArray());
+            listbox_cartas.Items.AddRange(container.JogadorSet.ToArray());
         }
 
         private Carta cartaQueryNome(string nomeCarta)
