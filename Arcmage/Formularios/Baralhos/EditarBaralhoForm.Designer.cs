@@ -57,6 +57,7 @@
             this.button_cancelar.TabIndex = 16;
             this.button_cancelar.Text = "Cancelar";
             this.button_cancelar.UseVisualStyleBackColor = true;
+            this.button_cancelar.Click += new System.EventHandler(this.button_cancelar_Click);
             // 
             // textBox_nomeBaralho
             // 
@@ -91,6 +92,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "<";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -100,6 +102,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = ">";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listbox_baralho
             // 
@@ -108,6 +111,7 @@
             this.listbox_baralho.Name = "listbox_baralho";
             this.listbox_baralho.Size = new System.Drawing.Size(120, 199);
             this.listbox_baralho.TabIndex = 10;
+            this.listbox_baralho.SelectedIndexChanged += new System.EventHandler(this.listbox_baralho_SelectedIndexChanged);
             // 
             // listbox_cartas
             // 
@@ -116,6 +120,7 @@
             this.listbox_cartas.Name = "listbox_cartas";
             this.listbox_cartas.Size = new System.Drawing.Size(120, 199);
             this.listbox_cartas.TabIndex = 9;
+            this.listbox_cartas.SelectedIndexChanged += new System.EventHandler(this.listbox_cartas_SelectedIndexChanged);
             // 
             // EditarBaralhoForm
             // 
@@ -133,6 +138,7 @@
             this.Controls.Add(this.listbox_cartas);
             this.Name = "EditarBaralhoForm";
             this.Text = "EditarBaralhoForm";
+            this.Load += new System.EventHandler(this.EditarBaralhoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -124,5 +124,10 @@ namespace Arcmage
         {
 
         }
+
+        private void listbox_cartas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

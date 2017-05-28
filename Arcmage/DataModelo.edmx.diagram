@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="87ac235529c7456d86dc9b590f369ea9" Name="Diagram1" ZoomLevel="74" >
+      <Diagram DiagramId="87ac235529c7456d86dc9b590f369ea9" Name="Diagram1" ZoomLevel="97" >
         <EntityTypeShape EntityType="Data_x0020_Modelo.Arbitro" Width="1.5" PointX="8.5" PointY="7.75" />
         <EntityTypeShape EntityType="Data_x0020_Modelo.Utilizador" Width="1.5" PointX="11" PointY="7.75" />
         <EntityTypeShape EntityType="Data_x0020_Modelo.Administrador" Width="1.5" PointX="13.125" PointY="7.75" />
@@ -34,13 +34,13 @@
         <AssociationConnector Association="Data_x0020_Modelo.DeckCarta" />
         <AssociationConnector Association="Data_x0020_Modelo.JogoEquipaEquipa" />
         <AssociationConnector Association="Data_x0020_Modelo.JogoEquipaEquipa1" />
-        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalJogador" />
-        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalJogador1" />
         <AssociationConnector Association="Data_x0020_Modelo.JogoNormalTorneioNormal" />
         <AssociationConnector Association="Data_x0020_Modelo.JogoEquipaTorneioEquipa" />
         <AssociationConnector Association="Data_x0020_Modelo.EquipaTorneioEquipa" />
         <AssociationConnector Association="Data_x0020_Modelo.TorneioNormalJogador" />
         <AssociationConnector Association="Data_x0020_Modelo.EquipaJogador" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalJogador1" />
+        <AssociationConnector Association="Data_x0020_Modelo.JogoNormalJogador2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

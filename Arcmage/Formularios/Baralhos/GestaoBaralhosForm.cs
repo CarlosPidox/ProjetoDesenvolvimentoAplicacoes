@@ -14,6 +14,7 @@ namespace Arcmage
     {
 
         private DataModeloContainer container;
+        private Deck deckSelecionado;
 
         public GestaoBaralhosForm()
         {
@@ -28,19 +29,7 @@ namespace Arcmage
             listbox_baralho.Items.AddRange(container.DeckSet.ToArray());
         }
 
-        private Deck baralhoQueryNome(string nomeBaralho)
-        {
-            var query = from baralho in container.DeckSet
-                        where baralho.Nome.Equals(nomeBaralho)
-                        select baralho;
-
-            foreach (var baralho in query)
-            {
-                return baralho;
-            }
-            return null;
-        }
-
+        
         private void EventoAdicionarBaralho(object sender, EventArgs e)
         {
             AdicionarBaralhoForm form = new AdicionarBaralhoForm();
@@ -49,15 +38,22 @@ namespace Arcmage
             if (resultado == DialogResult.OK)
             {
                 if (form.novoDeck != null)
-                    AdicionarBaralho(form.novoDeck);
+                    RefreshListaBaralhos();
             }
         }
 
-        private void AdicionarBaralho(Deck novoDeck)
+        private void EventoEditarBaralho(object sender, EventArgs e)
         {
-            container.DeckSet.Add(novoDeck);
-            container.SaveChanges();
-            RefreshListaBaralhos();
+            if (deckSelecionado != null)
+            {
+                EditarBaralhoForm form = new EditarBaralhoForm();
+                form.Deck = deckSelecionado;
+                DialogResult resultado = form.ShowDialog();
+                RefreshListaBaralhos();
+                container.SaveChanges();
+            }
+            else
+                MessageBox.Show("Por favor selecione o baralho a editar");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,6 +76,11 @@ namespace Arcmage
         {
             AdicionarBaralhoForm form = new AdicionarBaralhoForm();
             form.ShowDialog();
+        }
+
+        private void listbox_baralho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            deckSelecionado = (Deck)listbox_baralho.SelectedItem;
         }
     }
 }

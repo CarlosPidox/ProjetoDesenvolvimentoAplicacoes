@@ -43,7 +43,7 @@ namespace Arcmage
                     if(a.Password == textBox_password.Text)
                     {
                         login = true;
-                        GestaoCartasForm form = new GestaoCartasForm();
+                        ArbitroForm form = new ArbitroForm();
                         form.ShowDialog();
                     }
                 }

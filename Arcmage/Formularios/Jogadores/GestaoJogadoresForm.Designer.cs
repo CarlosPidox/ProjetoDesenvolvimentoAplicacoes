@@ -31,7 +31,7 @@
             this.button_eliminarJogador = new System.Windows.Forms.Button();
             this.button_editarJogador = new System.Windows.Forms.Button();
             this.button_adicionarJogador = new System.Windows.Forms.Button();
-            this.listbox_utilizadores = new System.Windows.Forms.ListBox();
+            this.listbox_jogadores = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button_eliminarJogador
@@ -42,6 +42,7 @@
             this.button_eliminarJogador.TabIndex = 15;
             this.button_eliminarJogador.Text = "Eliminar Selecionado";
             this.button_eliminarJogador.UseVisualStyleBackColor = true;
+            this.button_eliminarJogador.Click += new System.EventHandler(this.button_eliminarJogador_Click);
             // 
             // button_editarJogador
             // 
@@ -61,27 +62,28 @@
             this.button_adicionarJogador.TabIndex = 13;
             this.button_adicionarJogador.Text = "Adicionar ";
             this.button_adicionarJogador.UseVisualStyleBackColor = true;
-            this.button_adicionarJogador.Click += new System.EventHandler(this.button_adicionarJogador_Click);
+            this.button_adicionarJogador.Click += new System.EventHandler(this.EventoAdicionarJogador);
             // 
-            // listbox_utilizadores
+            // listbox_jogadores
             // 
-            this.listbox_utilizadores.FormattingEnabled = true;
-            this.listbox_utilizadores.Location = new System.Drawing.Point(12, 19);
-            this.listbox_utilizadores.Name = "listbox_utilizadores";
-            this.listbox_utilizadores.Size = new System.Drawing.Size(120, 225);
-            this.listbox_utilizadores.TabIndex = 12;
+            this.listbox_jogadores.FormattingEnabled = true;
+            this.listbox_jogadores.Location = new System.Drawing.Point(12, 19);
+            this.listbox_jogadores.Name = "listbox_jogadores";
+            this.listbox_jogadores.Size = new System.Drawing.Size(120, 225);
+            this.listbox_jogadores.TabIndex = 12;
             // 
             // GestaoJogadoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 279);
+            this.ClientSize = new System.Drawing.Size(289, 274);
             this.Controls.Add(this.button_eliminarJogador);
             this.Controls.Add(this.button_editarJogador);
             this.Controls.Add(this.button_adicionarJogador);
-            this.Controls.Add(this.listbox_utilizadores);
+            this.Controls.Add(this.listbox_jogadores);
             this.Name = "GestaoJogadoresForm";
             this.Text = "GestaoJogadoresForm";
+            this.Load += new System.EventHandler(this.GestaoJogadoresForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -91,6 +93,6 @@
         private System.Windows.Forms.Button button_eliminarJogador;
         private System.Windows.Forms.Button button_editarJogador;
         private System.Windows.Forms.Button button_adicionarJogador;
-        private System.Windows.Forms.ListBox listbox_utilizadores;
+        private System.Windows.Forms.ListBox listbox_jogadores;
     }
 }
