@@ -225,6 +225,7 @@
     <Compile Include="Formularios\PrincipalAdministradorForm.Designer.cs">
       <DependentUpon>PrincipalAdministradorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartialClasses\Deck.cs" />
     <Compile Include="PrincipalArbitroForm.cs">
       <SubType>Form</SubType>
     </Compile>

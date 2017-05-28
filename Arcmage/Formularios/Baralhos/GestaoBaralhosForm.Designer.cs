@@ -50,6 +50,7 @@
             this.listbox_baralho.Name = "listbox_baralho";
             this.listbox_baralho.Size = new System.Drawing.Size(120, 225);
             this.listbox_baralho.TabIndex = 0;
+            this.listbox_baralho.SelectedIndexChanged += new System.EventHandler(this.listbox_baralho_SelectedIndexChanged);
             // 
             // button_adicionarBaralho
             // 
@@ -69,7 +70,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Editar Selecionado";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.EventoEditarBaralho);
             // 
             // button2
             // 

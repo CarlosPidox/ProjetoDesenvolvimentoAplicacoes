@@ -46,6 +46,7 @@
             this.listbox_cartas.Name = "listbox_cartas";
             this.listbox_cartas.Size = new System.Drawing.Size(120, 199);
             this.listbox_cartas.TabIndex = 0;
+            this.listbox_cartas.SelectedIndexChanged += new System.EventHandler(this.listbox_cartas_SelectedIndexChanged);
             // 
             // listbox_baralho
             // 
@@ -136,6 +137,7 @@
             this.Controls.Add(this.listbox_cartas);
             this.Name = "AdicionarBaralhoForm";
             this.Text = "AdicionarBaralhoForm";
+            this.Load += new System.EventHandler(this.AdicionarBaralhoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
