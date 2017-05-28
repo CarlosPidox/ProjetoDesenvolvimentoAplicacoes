@@ -84,6 +84,7 @@
             this.button_editarJogador.TabIndex = 32;
             this.button_editarJogador.Text = "Editar";
             this.button_editarJogador.UseVisualStyleBackColor = true;
+            this.button_editarJogador.Click += new System.EventHandler(this.button_editarJogador_Click);
             // 
             // button_cancelarJogador
             // 
@@ -93,6 +94,7 @@
             this.button_cancelarJogador.TabIndex = 31;
             this.button_cancelarJogador.Text = "Cancelar";
             this.button_cancelarJogador.UseVisualStyleBackColor = true;
+            this.button_cancelarJogador.Click += new System.EventHandler(this.button_cancelarJogador_Click);
             // 
             // label_nomeEmail
             // 
@@ -144,6 +146,7 @@
             this.pictureBox_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_avatar.TabIndex = 25;
             this.pictureBox_avatar.TabStop = false;
+            this.pictureBox_avatar.Click += new System.EventHandler(this.pictureBox_avatar_Click);
             // 
             // EditarJogadorForm
             // 
@@ -164,6 +167,7 @@
             this.Controls.Add(this.pictureBox_avatar);
             this.Name = "EditarJogadorForm";
             this.Text = "EditarJogadorForm";
+            this.Load += new System.EventHandler(this.EditarJogadorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_idade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_avatar)).EndInit();
             this.ResumeLayout(false);

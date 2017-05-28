@@ -42,6 +42,7 @@
             this.button_eliminarJogador.TabIndex = 15;
             this.button_eliminarJogador.Text = "Eliminar Selecionado";
             this.button_eliminarJogador.UseVisualStyleBackColor = true;
+            this.button_eliminarJogador.Click += new System.EventHandler(this.button_eliminarJogador_Click);
             // 
             // button_editarJogador
             // 
@@ -82,6 +83,7 @@
             this.Controls.Add(this.listbox_jogadores);
             this.Name = "GestaoJogadoresForm";
             this.Text = "GestaoJogadoresForm";
+            this.Load += new System.EventHandler(this.GestaoJogadoresForm_Load);
             this.ResumeLayout(false);
 
         }

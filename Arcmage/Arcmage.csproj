@@ -233,6 +233,7 @@
       <DependentUpon>PrincipalAdministradorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PartialClasses\Deck.cs" />
+    <Compile Include="PartialClasses\Jogador.cs" />
     <Compile Include="PrincipalArbitroForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -40,8 +40,6 @@ namespace Arcmage
             }
         }
 
-
-
         private void AdicionarJogador(Jogador novoJogador)
         {
             container.JogadorSet.Add(novoJogador);
@@ -51,9 +49,39 @@ namespace Arcmage
 
         private void button_editarJogador_Click(object sender, EventArgs e)
         {
-            EditarJogadorForm form = new EditarJogadorForm();
-            form.ShowDialog();
+            var jogador = (Jogador)listbox_jogadores.SelectedItem;
+
+            if (jogador != null)
+            {
+                EditarJogadorForm form = new EditarJogadorForm();
+                form.jogador = jogador;
+                DialogResult resultado = form.ShowDialog();
+                if (form.DialogResult == DialogResult.OK)
+                {
+                    RefreshListaJogadores();
+                    container.SaveChanges();
+                }
+            }
+            else
+                MessageBox.Show("Por favor selecione um jogador");
+        }
+
+        private void button_eliminarJogador_Click(object sender, EventArgs e)
+        {
+            var jogador = (Jogador)listbox_jogadores.SelectedItem;
+
+            if (jogador != null)
+            {
+                container.JogadorSet.Remove(jogador);
+                container.SaveChanges();
+                RefreshListaJogadores();
+            }
+        }
+
+        private void GestaoJogadoresForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
-    
+
 }
