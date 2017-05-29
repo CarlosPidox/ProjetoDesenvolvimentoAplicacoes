@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace Arcmage
     {
         public override string ToString()
         {
-            return Nome;
+            return Nickname;
         }
     }
+}

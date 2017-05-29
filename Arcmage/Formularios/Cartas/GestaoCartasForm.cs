@@ -12,7 +12,7 @@ namespace Arcmage
 {
     public partial class GestaoCartasForm : Form
     {
-        
+
         private DataModeloContainer container;
 
         public GestaoCartasForm()
@@ -108,10 +108,18 @@ namespace Arcmage
 
                     if (carta != null)
                     {
-                        container.CartaSet.Remove(carta);
-                        container.SaveChanges();
-                        RefreshListaCartas();
-                    }       
+                        try
+                        {
+                            container.CartaSet.Remove(carta);
+                            container.SaveChanges();
+                            RefreshListaCartas();
+                        }
+                        catch
+                        {
+                            container = new DataModeloContainer();
+                            MessageBox.Show("A carta que pretende eliminar está a ser usada por um deck");
+                        }
+                    }
                     else
                         MessageBox.Show("Algo está mal! Carta não encontrada na base de dados!");
                 }

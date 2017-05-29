@@ -34,6 +34,7 @@ namespace Arcmage
                 if (listaDeck.Count() != 0)
                 {
                     Deck.Nome = textBox_nomeBaralho.Text;
+                    Deck.Carta = null;
                     Deck.Carta = listaDeck;
                     container.SaveChanges();
                 }
@@ -70,12 +71,15 @@ namespace Arcmage
         private void EditarBaralhoForm_Load(object sender, EventArgs e)
         {
             textBox_nomeBaralho.Text = Deck.Nome;
-            listaDeck = new List<Carta>();
-            foreach (Carta carta in Deck.Carta)
+            if (Deck.Carta.Count > 0)
             {
-                listaDeck.Add(carta);
+                listaDeck = new List<Carta>();
+                foreach (Carta carta in Deck.Carta)
+                {
+                    listaDeck.Add(carta);
+                }
+                RefreshListaDeck();
             }
-            RefreshListaDeck();
         }
 
         private void button_cancelar_Click(object sender, EventArgs e)

@@ -234,10 +234,10 @@
     </Compile>
     <Compile Include="PartialClasses\Deck.cs" />
     <Compile Include="PartialClasses\Jogador.cs" />
-    <Compile Include="PrincipalArbitroForm.cs">
+    <Compile Include="Formularios\PrincipalArbitroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrincipalArbitroForm.Designer.cs">
+    <Compile Include="Formularios\PrincipalArbitroForm.Designer.cs">
       <DependentUpon>PrincipalArbitroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -371,7 +371,9 @@
       <LastGenOutput>DataModeloContainer.cs</LastGenOutput>
       <DependentUpon>DataModelo.edmx</DependentUpon>
     </Content>
-    <Content Include="Imagens\AddAvatar.png" />
+    <Content Include="Imagens\AddAvatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

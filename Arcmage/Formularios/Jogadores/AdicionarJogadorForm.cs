@@ -20,11 +20,12 @@ namespace Arcmage
         public AdicionarJogadorForm()
         {
             InitializeComponent();
+            pictureBox_avatar.ImageLocation = @"Imagens\AddAvatar.png";
         }
 
         private void button_adicionarJogador_Click(object sender, EventArgs e)
         {
-                    /*label_nickname.ForeColor = Color.Black;
+            label_nickname.ForeColor = Color.Black;
             label_nome.ForeColor = Color.Black;
             label_email.ForeColor = Color.Black;
             label_idade.ForeColor = Color.Black;
@@ -40,24 +41,24 @@ namespace Arcmage
                 label_nome.ForeColor = Color.Red;
             }
             string email = textBox_emailJogador.Text;
-            var teste = email.IndexOf("@");
-            if (email.Length == 0 && email.IndexOf("@") != 1)
+            //var teste = email.IndexOf("@");
+            if (email.Length == 0)
             {
                 erro = true;
                 label_email.ForeColor = Color.Red;
             }
             if (!erro)
-            {*/
-            novoJogador = new Jogador
-            {
-                Nickname = textBox_nickname.Text,
-                Idade = (int)numericUpDown_idade.Value,
-                Nome = textBox_nomeJogador.Text,
-                Email = textBox_emailJogador.Text,
-                Avatar = pictureBox_avatar.ImageLocation
-            };
-            DialogResult = DialogResult.OK;
-            /*}*/
+            {           
+                novoJogador = new Jogador
+                {
+                    Nickname = textBox_nickname.Text,
+                    Idade = (int)numericUpDown_idade.Value,
+                    Nome = textBox_nomeJogador.Text,
+                    Email = textBox_emailJogador.Text,
+                    Avatar = pictureBox_avatar.ImageLocation
+                };
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void pictureBox_avatar_Click(object sender, EventArgs e)
@@ -73,6 +74,11 @@ namespace Arcmage
         private void openImagemDialog_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void button_removerAvatar_Click(object sender, EventArgs e)
+        {
+            pictureBox_avatar.ImageLocation = @"Imagens\AddAvatar.png";
         }
     }
 }
